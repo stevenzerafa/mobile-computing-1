@@ -4,13 +4,13 @@
 <!doctype html>
 <html>
 <head>
-	<title>jQuery Mobile Page</title>
+	<title>jQuery Calculator App</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="orange-mobile-web-app-capable" content="yes" />
 
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" />
-	<style> .dragimg {width:50px;height:50px}></style>
+	<style> .dragimg ></style>
 	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
 	<script src="http://code.jquery.com/ui/1.8.24/jquery-ui.min.js"></script>
@@ -26,11 +26,18 @@
 		<h4>Page header</h4>
 	</header><!-- /header -->
 	<div data-role="controlgroup" data-type="horizontal" style="text-align:center">
-			<a class="num" data-role="button">1</a>
-			<a class="num" data-role="button">2</a>
-			<a class="num" data-role="button">3</a>
-		</div>
-		<div>
+		<a class="num" data-role="button">1</a>
+		<a class="num" data-role="button">2</a>
+		<a class="num" data-role="button">3</a>
+		<a class="num" data-role="button">4</a>
+		<a class="num" data-role="button">5</a>
+		<a class="num" data-role="button">6</a>
+		<a class="num" data-role="button">7</a>
+		<a class="num" data-role="button">8</a>
+		<a class="num" data-role="button">9</a>
+		<a class="num" data-role="button">0</a>
+	</div>
+	<div>
 		<img class="dragimg" src="orange.gif"/>
 		<img class="dragimg"  src="orange.gif"/>
 		<img class="dragimg"  src="orange.gif"/>
@@ -39,10 +46,13 @@
 		<img class="dragimg"  src="orange.gif"/>
 		<img class="dragimg"  src="orange.gif"/>
 		<img class="dragimg" src="orange.gif"/>
-		</div>
-		<div id="plate">
-		plate</br></br>
-		</div>
+	</div>
+	<div id="plate">
+		</br></br><img src="plate.gif" width='300px' height='180px'/></br></br>
+	</div>
+	<div id="summary">
+		</br></br>4 + 1 = <input type="text" id="userinput"></br></br>
+	</div>
 	<footer data-role="footer">
 		<h4>Page footer</h4>
 	</footer><!-- /footer -->
@@ -51,7 +61,7 @@
 
 
 $(".num").click(function() {
-            alert($(this).text());
+            document.getElementById("userinput").value = ($(this).text());
         });
 
 $(document).ready(function() {
